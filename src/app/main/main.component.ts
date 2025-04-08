@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   autoplay = false;
   customArgsEnabled = false;
   customArgs = null;
-  customOutputEnabled = false;
+  customOutputEnabled = true;
   replaceArgs = false;
   customOutput = null;
   youtubeAuthEnabled = false;

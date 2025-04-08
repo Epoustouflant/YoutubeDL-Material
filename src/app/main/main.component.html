@@ -10,7 +10,7 @@
                                 <mat-form-field color="accent" class="example-full-width">
                                     <textarea class="url-input" cdkTextareaAutosize cdkAutosizeMinRows="1" wrap="off" matInput (ngModelChange)="inputChanged($event)" [(ngModel)]="url" [placeholder]="'URL' + (youtubeSearchEnabled ? ' or search' : '')" type="url" name="url" #urlinput></textarea>
                                 </mat-form-field>
-                                <!--<button type="button" class="input-clear-button" mat-icon-button (click)="clearInput()"><mat-icon>clear</mat-icon></button>-->
+                                <!-- <button type="button" class="input-clear-button" mat-icon-button (click)="clearInput()"><mat-icon>clear</mat-icon></button> -->
                             </div>
                             <div *ngIf="allowQualitySelect" class="col-7 col-sm-3">
                                 <mat-form-field color="accent" style="display: inline-block; width: inherit; min-width: 120px;">
@@ -44,6 +44,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div [ngClass]="allowQualitySelect ? 'col-sm-9' : null" class="col-12">
+                        <mat-form-field color="accent" class="example-full-width">
+                            <textarea class="title-input" cdkTextareaAutosize cdkAutosizeMinRows="1" wrap="off" matInput (ngModelChange)="inputChanged($event)" [(ngModel)]="customOutput" [placeholder]="'Title'" type="customOutput" name="customOutput" #urlinput></textarea>
+                        </mat-form-field>
                     </div>
                     <div class="results-div" *ngIf="results_showing">
                         <span *ngFor="let result of results; let i = index">
